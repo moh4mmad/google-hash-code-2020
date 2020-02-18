@@ -1,11 +1,14 @@
 <?php
-
+$start = microtime(1);
 $pizza = new Pizza;
 $fileNames = array("a_example", "b_small", "c_medium", "d_quite_big", "e_also_big");
 foreach ($fileNames as $fileName)
 {
 	$pizza->Process($fileName);
 }
+echo("<br>######################<br>");
+echo("Total execution times: ". (microtime(1) - $start) . " Sec");
+echo("<br>######################");
 
 class Pizza
 {
